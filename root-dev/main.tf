@@ -13,7 +13,7 @@ provider "azurerm" {
 
 module "rg" {
   source   = "app.terraform.io/akshayInfra/terraform-module-rg/module"
-  version  = "1.0.0"
+  version  = "1.1.0"
   rg_name  = "catsweb-dev-rg"
   location = "eastus"
 }
@@ -47,7 +47,7 @@ resource "azurerm_network_interface" "vmnic" {
 
 module "vm" {
   source   = "app.terraform.io/akshayInfra/terraform-module-vm/module"
-  version  = "1.2.0"
+  version  = "1.3.0"
   rg_name  = module.rg.rg_name
   vm_name  = "catsweb-dev-vm"   # hard-coded
   vm_size  = "Standard_B2s"    # hard-coded
