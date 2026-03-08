@@ -44,14 +44,14 @@ resource "azurerm_network_interface" "vmnic" {
   }
 }
 
-
 module "vm" {
   source   = "app.terraform.io/akshayInfra/terraform-module-vm/module"
   version  = "1.3.0"
-  rg_name  = module.rg.rg_name
-  vm_name  = "catsweb-dev-vm"   # hard-coded
-  vm_size  = "Standard_B2s"    # hard-coded
-  location = "eastus"          # hard-coded
-  os_type  = "Linux"           # hard-coded
-  nic_id   = "some-nic-id"     # placeholder until NIC module is added
+
+  rg_name   = module.rg.rg_name
+  vm_name   = "catsweb-dev-vm"
+  vm_size   = "Standard_B2s"
+  location  = module.rg.location
+  os_type   = "Linux"
+  nic_id    = azurerm_network_interface.vmnic.id   # ✅ FIXED
 }
