@@ -12,14 +12,14 @@ provider "azurerm" {
 }
 
 module "rg" {
-  source   = "app.terraform.io/akshayInfra/terraform-module-rg/azurerm"
+  source   = "app.terraform.io/akshayInfra/terraform-module-rg/module"
   version  = "1.0.0"
   rg_name  = "catsweb-dev-rg"
   location = "eastus"
 }
 
 module "vm" {
-  source   = "app.terraform.io/akshayInfra/terraform-module-vm/azurerm"
+  source   = "app.terraform.io/akshayInfra/terraform-module-vm/module"
   version  = "1.0.0"
   rg_name  = module.rg.rg_name
   vm_name  = "catsweb-dev-vm"   # hard-coded
