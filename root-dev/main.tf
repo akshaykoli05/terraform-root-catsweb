@@ -20,7 +20,7 @@ module "rg" {
 
 module "vm" {
   source   = "app.terraform.io/akshayInfra/terraform-module-vm/module"
-  version  = "1.0.0"
+  version  = "1.2.0"
   rg_name  = module.rg.rg_name
   vm_name  = "catsweb-dev-vm"   # hard-coded
   vm_size  = "Standard_B2s"    # hard-coded
