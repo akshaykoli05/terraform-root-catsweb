@@ -49,7 +49,7 @@ resource "azurerm_network_interface" "vmnic01" {
 # Call VM module
 module "vm01" {
   source   = "app.terraform.io/akshayInfra/terraform-module-vm/module"
-  version  = "1.4.0"
+  version  = "1.4.1"
 
   rg_name   = data.azurerm_resource_group.existing.name
   location  = data.azurerm_resource_group.existing.location
